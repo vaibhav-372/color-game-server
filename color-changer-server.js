@@ -398,6 +398,10 @@ const initializeUsers = async () => {
 // Call initialization on server startup
 initializeUsers();
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Color Game Server!');
+});
+
 // Login route
 app.post("/api/login", async (req, res) => { 
   const { username, password } = req.body;
