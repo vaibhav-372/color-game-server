@@ -140,6 +140,36 @@ const userSchema = new mongoose.Schema({
   game128: [String],
   game129: [String],
   game130: [String],
+  game131: [String],
+  game132: [String],
+  game133: [String],
+  game134: [String],
+  game135: [String],
+  game136: [String],
+  game137: [String],
+  game138: [String],
+  game139: [String],
+  game140: [String],
+  game141: [String],
+  game142: [String],
+  game143: [String],
+  game144: [String],
+  game145: [String],
+  game146: [String],
+  game147: [String],
+  game148: [String],
+  game149: [String],
+  game150: [String],
+  game151: [String],
+  game152: [String],
+  game153: [String],
+  game154: [String],
+  game155: [String],
+  game156: [String],
+  game157: [String],
+  game158: [String],
+  game159: [String],
+  game160: [String],
 });
 
 const UserData = mongoose.model("datas", userSchema);
@@ -212,6 +242,21 @@ const historySchema = new mongoose.Schema({
   game125ANDgame126: [{ g125: [String], g126: [String], color: [String] }],
   game127ANDgame128: [{ g127: [String], g128: [String], color: [String] }],
   game129ANDgame130: [{ g129: [String], g130: [String], color: [String] }],
+  game131ANDgame132: [{ g131: [String], g132: [String], color: [String] }],
+  game133ANDgame134: [{ g133: [String], g134: [String], color: [String] }],
+  game135ANDgame136: [{ g135: [String], g136: [String], color: [String] }],
+  game137ANDgame138: [{ g137: [String], g138: [String], color: [String] }],
+  game139ANDgame140: [{ g139: [String], g140: [String], color: [String] }],
+  game141ANDgame142: [{ g141: [String], g142: [String], color: [String] }],
+  game143ANDgame144: [{ g143: [String], g144: [String], color: [String] }],
+  game145ANDgame146: [{ g145: [String], g146: [String], color: [String] }],
+  game147ANDgame148: [{ g147: [String], g148: [String], color: [String] }],
+  game149ANDgame150: [{ g149: [String], g150: [String], color: [String] }],
+  game151ANDgame152: [{ g151: [String], g152: [String], color: [String] }],
+  game153ANDgame154: [{ g153: [String], g154: [String], color: [String] }],
+  game155ANDgame156: [{ g155: [String], g156: [String], color: [String] }],
+  game157ANDgame158: [{ g157: [String], g158: [String], color: [String] }],
+  game159ANDgame160: [{ g159: [String], g160: [String], color: [String] }],
   time: {
     type: String,
     required: true,
@@ -385,6 +430,36 @@ const initializeUsers = async () => {
           game128: emptyArray,
           game129: emptyArray,
           game130: emptyArray,
+          game131: emptyArray,
+          game132: emptyArray,
+          game133: emptyArray,
+          game134: emptyArray,
+          game135: emptyArray,
+          game136: emptyArray,
+          game137: emptyArray,
+          game138: emptyArray,
+          game139: emptyArray,
+          game140: emptyArray,
+          game141: emptyArray,
+          game142: emptyArray,
+          game143: emptyArray,
+          game144: emptyArray,
+          game145: emptyArray,
+          game146: emptyArray,
+          game147: emptyArray,
+          game148: emptyArray,
+          game149: emptyArray,
+          game150: emptyArray,
+          game151: emptyArray,
+          game152: emptyArray,
+          game153: emptyArray,
+          game154: emptyArray,
+          game155: emptyArray,
+          game156: emptyArray,
+          game157: emptyArray,
+          game158: emptyArray,
+          game159: emptyArray,
+          game160: emptyArray,
         });
         await newUser.save();
         console.log(`Initialized data for ${user.username}`);
@@ -398,12 +473,12 @@ const initializeUsers = async () => {
 // Call initialization on server startup
 initializeUsers();
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Color Game Server!');
+app.get("/", (req, res) => {
+  res.send("Welcome to the Color Game Server!");
 });
 
 // Login route
-app.post("/api/login", async (req, res) => { 
+app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
   const user = USERS.find(
@@ -557,6 +632,36 @@ app.post("/api/save-data", async (req, res) => {
     game128,
     game129,
     game130,
+    game131,
+    game132,
+    game133,
+    game134,
+    game135,
+    game136,
+    game137,
+    game138,
+    game139,
+    game140,
+    game141,
+    game142,
+    game143,
+    game144,
+    game145,
+    game146,
+    game147,
+    game148,
+    game149,
+    game150,
+    game151,
+    game152,
+    game153,
+    game154,
+    game155,
+    game156,
+    game157,
+    game158,
+    game159,
+    game160,
   } = req.body;
 
   try {
@@ -684,6 +789,37 @@ app.post("/api/save-data", async (req, res) => {
       userData.game128 = game128 || userData.game128;
       userData.game129 = game129 || userData.game129;
       userData.game130 = game130 || userData.game130;
+      userData.game131 = game131 || userData.game131;
+      userData.game132 = game132 || userData.game132;
+      userData.game133 = game133 || userData.game133;
+      userData.game134 = game134 || userData.game134;
+      userData.game135 = game135 || userData.game135;
+      userData.game136 = game136 || userData.game136;
+      userData.game137 = game137 || userData.game137;
+      userData.game138 = game138 || userData.game138;
+      userData.game139 = game139 || userData.game139;
+      userData.game140 = game140 || userData.game140;
+      userData.game141 = game141 || userData.game141;
+      userData.game142 = game142 || userData.game142;
+      userData.game143 = game143 || userData.game143;
+      userData.game144 = game144 || userData.game144;
+      userData.game145 = game145 || userData.game145;
+      userData.game146 = game146 || userData.game146;
+      userData.game147 = game147 || userData.game147;
+      userData.game148 = game148 || userData.game148;
+      userData.game149 = game149 || userData.game149;
+      userData.game150 = game150 || userData.game150;
+      userData.game151 = game151 || userData.game151;
+      userData.game152 = game152 || userData.game152;
+      userData.game153 = game153 || userData.game153;
+      userData.game154 = game154 || userData.game154;
+      userData.game155 = game155 || userData.game155;
+      userData.game156 = game156 || userData.game156;
+      userData.game157 = game157 || userData.game157;
+      userData.game158 = game158 || userData.game158;
+      userData.game159 = game159 || userData.game159;
+      userData.game160 = game160 || userData.game160;
+
       await userData.save();
       res.status(200).send("User data updated successfully!");
     } else {
