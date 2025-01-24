@@ -220,16 +220,17 @@ const historySchema = new mongoose.Schema({
     required: true,
     default: () => {
       const now = new Date();
-      const formattedDate = now.toLocaleDateString("en-US", {
+      const options = {
         month: "2-digit",
         day: "2-digit",
         year: "numeric",
-      });
-      const formattedTime = now.toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
-      });
+        timeZone: "Asia/Kolkata", // Indian Standard Time
+      };
+      const formattedDate = now.toLocaleDateString("en-US", options);
+      const formattedTime = now.toLocaleTimeString("en-US", options);
       return `${formattedDate}, ${formattedTime}`;
     },
   },
