@@ -227,13 +227,11 @@ const historySchema = new mongoose.Schema({
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
-        timeZone: "Asia/Kolkata", // Indian Standard Time
+        timeZone: "Asia/Kolkata",
       };
-      const formattedDate = now.toLocaleDateString("en-US", options);
-      const formattedTime = now.toLocaleTimeString("en-US", options);
-      return `${formattedDate}, ${formattedTime}`;
+      return now.toLocaleString("en-US", options);
     },
-  },
+  }  
 });
 
 // Model
