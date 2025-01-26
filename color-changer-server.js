@@ -8,9 +8,10 @@ const app = express();
 
 // CORS configuration: Allow only requests from a specific origin
 const corsOptions = {
-  origin: 'https://color-game-production.up.railway.app', // The allowed origin
-  methods: 'GET,POST', // Allowed methods
-  allowedHeaders: 'Content-Type, Authorization', // Allowed headers
+  origin: 'https://color-game-production.up.railway.app', // Replace with your client URL
+  methods: ['GET', 'POST'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Allow cookies and credentials
 };
 
 // Use CORS middleware with the configuration
@@ -781,10 +782,6 @@ app.delete("/delete-history", async (req, res) => {
     res.status(500).json({ message: "Error deleting history" });
   }
 });
-
-
-// Handle preflight requests (OPTIONS requests)
-app.options('*', cors(corsOptions)); // Allow OPTIONS method for all routes
 
 // Start the server
 const PORT = 5000;
