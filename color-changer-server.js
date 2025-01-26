@@ -5,22 +5,8 @@ const cors = require("cors");
 
 // Initialize Express app
 const app = express();
-
-// CORS configuration: Allow only requests from a specific origin
-const corsOptions = {
-  origin: 'https://color-game-production.up.railway.app', // Replace with your client URL
-  methods: ['GET', 'POST'], // Allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  credentials: true, // Allow cookies and credentials
-};
-
-// Use CORS middleware with the configuration
-app.use(cors(corsOptions)); // Enable CORS for the specific origin
-
-// Middleware to parse incoming requests
-app.use(express.json({ limit: '10mb' })); // Limit body size to 10mb
-app.use(express.urlencoded({ limit: '10mb', extended: true })); // URL-encoded data with limit
-
+app.use(cors());
+app.use(express.json());
 
 // MongoDB connection
 const uri =
