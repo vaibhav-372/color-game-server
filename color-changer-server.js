@@ -5,8 +5,18 @@ const cors = require("cors");
 
 // Initialize Express app
 const app = express();
-app.use(cors());
-app.use(express.json());
+
+// CORS configuration
+const corsOptions = {
+  origin: 'https://color-game-production.up.railway.app', // Frontend URL
+  methods: ['GET', 'POST'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Allow credentials (if using cookies or auth tokens)
+};
+
+app.use(cors(corsOptions)); // Apply CORS middleware
+app.use(express.json({ limit: '3mb' })); // Increase JSON body limit
+app.use(express.urlencoded({ limit: '3mb', extended: true })); // Increase URL-encoded body limit
 
 // MongoDB connection
 const uri =
