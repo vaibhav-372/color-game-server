@@ -6,9 +6,20 @@ const cors = require("cors");
 // Initialize Express app
 const app = express();
 
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ limit: '10mb', extended: true })); 
+// CORS configuration: Allow only requests from a specific origin
+const corsOptions = {
+  origin: 'https://color-game-production.up.railway.app', // The allowed origin
+  methods: 'GET,POST', // Allowed methods
+  allowedHeaders: 'Content-Type, Authorization', // Allowed headers
+};
+
+// Use CORS middleware with the configuration
+app.use(cors(corsOptions)); // Enable CORS for the specific origin
+
+// Middleware to parse incoming requests
+app.use(express.json({ limit: '10mb' })); // Limit body size to 10mb
+app.use(express.urlencoded({ limit: '10mb', extended: true })); // URL-encoded data with limit
+
 
 // MongoDB connection
 const uri =
@@ -770,6 +781,10 @@ app.delete("/delete-history", async (req, res) => {
     res.status(500).json({ message: "Error deleting history" });
   }
 });
+
+
+// Handle preflight requests (OPTIONS requests)
+app.options('*', cors(corsOptions)); // Allow OPTIONS method for all routes
 
 // Start the server
 const PORT = 5000;
