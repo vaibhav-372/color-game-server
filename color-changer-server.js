@@ -9,7 +9,7 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: 'https://color-game-production.up.railway.app', // Frontend URL
-  methods: ['GET', 'POST'], // Allowed methods
+  methods: ['GET', 'POST', 'PUT'], // Allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   credentials: true, // Allow credentials (if using cookies or auth tokens)
 };
