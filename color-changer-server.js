@@ -180,6 +180,42 @@ const userSchema = new mongoose.Schema({
   game158: [String],
   game159: [String],
   game160: [String],
+  game161: [String],
+  game162: [String],
+  game163: [String],
+  game164: [String],
+  game165: [String],
+  game166: [String],
+  game167: [String],
+  game168: [String],
+  game169: [String],
+  game170: [String],
+  game171: [String],
+  game172: [String],
+  game173: [String],
+  game174: [String],
+  game175: [String],
+  game176: [String],
+  game177: [String],
+  game178: [String],
+  game179: [String],
+  game180: [String],
+  game181: [String],
+  game182: [String],
+  game183: [String],
+  game184: [String],
+  game185: [String],
+  game186: [String],
+  game187: [String],
+  game188: [String],
+  game189: [String],
+  game190: [String],
+  game191: [String],
+  game192: [String],
+  game193: [String],
+  game194: [String],
+  game195: [String],
+  game196: [String],  
 });
 
 const UserData = mongoose.model("datas", userSchema);
@@ -266,7 +302,25 @@ const historySchema = new mongoose.Schema({
   game153ANDgame154: [{ g153: [String], g154: [String], color: [String] }],
   game155ANDgame156: [{ g155: [String], g156: [String], color: [String] }],
   game157ANDgame158: [{ g157: [String], g158: [String], color: [String] }],
-  game159ANDgame160: [{ g159: [String], g160: [String], color: [String] }],  
+  game159ANDgame160: [{ g159: [String], g160: [String], color: [String] }],
+  game161ANDgame162: [{ g161: [String], g162: [String], color: [String] }],
+  game163ANDgame164: [{ g163: [String], g164: [String], color: [String] }],
+  game165ANDgame166: [{ g165: [String], g166: [String], color: [String] }],
+  game167ANDgame168: [{ g167: [String], g168: [String], color: [String] }],
+  game169ANDgame170: [{ g169: [String], g170: [String], color: [String] }],
+  game171ANDgame172: [{ g171: [String], g172: [String], color: [String] }],
+  game173ANDgame174: [{ g173: [String], g174: [String], color: [String] }],
+  game175ANDgame176: [{ g175: [String], g176: [String], color: [String] }],
+  game177ANDgame178: [{ g177: [String], g178: [String], color: [String] }],
+  game179ANDgame180: [{ g179: [String], g180: [String], color: [String] }],
+  game181ANDgame182: [{ g181: [String], g182: [String], color: [String] }],
+  game183ANDgame184: [{ g183: [String], g184: [String], color: [String] }],
+  game185ANDgame186: [{ g185: [String], g186: [String], color: [String] }],
+  game187ANDgame188: [{ g187: [String], g188: [String], color: [String] }],
+  game189ANDgame190: [{ g189: [String], g190: [String], color: [String] }],
+  game191ANDgame192: [{ g191: [String], g192: [String], color: [String] }],
+  game193ANDgame194: [{ g193: [String], g194: [String], color: [String] }],
+  game195ANDgame196: [{ g195: [String], g196: [String], color: [String] }],  
   time: {
     type: String,
     required: true,
@@ -468,7 +522,43 @@ const initializeUsers = async () => {
           game157: emptyArray,
           game158: emptyArray,
           game159: emptyArray,
-          game160: emptyArray,                    
+          game160: emptyArray,
+          game161: emptyArray,
+          game162: emptyArray,
+          game163: emptyArray,
+          game164: emptyArray,
+          game165: emptyArray,
+          game166: emptyArray,
+          game167: emptyArray,
+          game168: emptyArray,
+          game169: emptyArray,
+          game170: emptyArray,
+          game171: emptyArray,
+          game172: emptyArray,
+          game173: emptyArray,
+          game174: emptyArray,
+          game175: emptyArray,
+          game176: emptyArray,
+          game177: emptyArray,
+          game178: emptyArray,
+          game179: emptyArray,
+          game180: emptyArray,
+          game181: emptyArray,
+          game182: emptyArray,
+          game183: emptyArray,
+          game184: emptyArray,
+          game185: emptyArray,
+          game186: emptyArray,
+          game187: emptyArray,
+          game188: emptyArray,
+          game189: emptyArray,
+          game190: emptyArray,
+          game191: emptyArray,
+          game192: emptyArray,
+          game193: emptyArray,
+          game194: emptyArray,
+          game195: emptyArray,
+          game196: emptyArray,          
         });
         await newUser.save();
         console.log(`Initialized data for ${user.username}`);
@@ -671,6 +761,42 @@ app.post("/api/save-data", async (req, res) => {
     game158,
     game159,
     game160,
+    game161,
+    game162,
+    game163,
+    game164,
+    game165,
+    game166,
+    game167,
+    game168,
+    game169,
+    game170,
+    game171,
+    game172,
+    game173,
+    game174,
+    game175,
+    game176,
+    game177,
+    game178,
+    game179,
+    game180,
+    game181,
+    game182,
+    game183,
+    game184,
+    game185,
+    game186,
+    game187,
+    game188,
+    game189,
+    game190,
+    game191,
+    game192,
+    game193,
+    game194,
+    game195,
+    game196,    
   } = req.body;
 
   try {
@@ -828,6 +954,42 @@ app.post("/api/save-data", async (req, res) => {
       userData.game158 = game158 || userData.game158;
       userData.game159 = game159 || userData.game159;
       userData.game160 = game160 || userData.game160;
+      userData.game161 = game161 || userData.game161;
+      userData.game162 = game162 || userData.game162;
+      userData.game163 = game163 || userData.game163;
+      userData.game164 = game164 || userData.game164;
+      userData.game165 = game165 || userData.game165;
+      userData.game166 = game166 || userData.game166;
+      userData.game167 = game167 || userData.game167;
+      userData.game168 = game168 || userData.game168;
+      userData.game169 = game169 || userData.game169;
+      userData.game170 = game170 || userData.game170;
+      userData.game171 = game171 || userData.game171;
+      userData.game172 = game172 || userData.game172;
+      userData.game173 = game173 || userData.game173;
+      userData.game174 = game174 || userData.game174;
+      userData.game175 = game175 || userData.game175;
+      userData.game176 = game176 || userData.game176;
+      userData.game177 = game177 || userData.game177;
+      userData.game178 = game178 || userData.game178;
+      userData.game179 = game179 || userData.game179;
+      userData.game180 = game180 || userData.game180;
+      userData.game181 = game181 || userData.game181;
+      userData.game182 = game182 || userData.game182;
+      userData.game183 = game183 || userData.game183;
+      userData.game184 = game184 || userData.game184;
+      userData.game185 = game185 || userData.game185;
+      userData.game186 = game186 || userData.game186;
+      userData.game187 = game187 || userData.game187;
+      userData.game188 = game188 || userData.game188;
+      userData.game189 = game189 || userData.game189;
+      userData.game190 = game190 || userData.game190;
+      userData.game191 = game191 || userData.game191;
+      userData.game192 = game192 || userData.game192;
+      userData.game193 = game193 || userData.game193;
+      userData.game194 = game194 || userData.game194;
+      userData.game195 = game195 || userData.game195;
+      userData.game196 = game196 || userData.game196;      
 
       await userData.save();
       res.status(200).send("User data updated successfully!");
