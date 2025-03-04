@@ -8,8 +8,8 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://color-game.azurewebsites.net/', // Frontend URL
-  methods: ['GET', 'POST', 'PUT'], // Allowed methods
+  origin: 'https://color-game.azurewebsites.net', // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   credentials: true, // Allow credentials (if using cookies or auth tokens)
 };
